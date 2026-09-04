@@ -1,191 +1,408 @@
+/* ==========================================
+CONFIGURACIÓN GENERAL
+========================================== */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f4f7f6;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+background-color: #f4f7f6;
+color: #333;
+min-height: 100vh;
 }
 
-/* --- Estilos para el Login (index.html) --- */
+/* ==========================================
+LOGIN - index.html
+========================================== */
+
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #39A900, #00324D);
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+background: linear-gradient(
+135deg,
+#39A900 0%,
+#00324D 100%
+);
 }
 
 .login-box {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
+width: 100%;
+max-width: 400px;
+padding: 40px;
+background-color: #ffffff;
+border-radius: 12px;
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+text-align: center;
 }
 
-.login-box h2 {
-    margin-bottom: 20px;
-    color: #00324D;
+.login-box h1 {
+margin-bottom: 25px;
+color: #00324D;
+font-size: 28px;
 }
+
+/* ==========================================
+CAMPOS DEL LOGIN
+========================================== */
 
 .input-group {
-    margin-bottom: 15px;
-    text-align: left;
+margin-bottom: 18px;
+text-align: left;
 }
 
 .input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #666;
+display: block;
+margin-bottom: 7px;
+color: #444;
+font-size: 14px;
+font-weight: 600;
 }
 
 .input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 6px;
+background-color: #fff;
+color: #333;
+font-size: 16px;
+outline: none;
+transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+.input-group input:focus {
+border-color: #39A900;
+box-shadow: 0 0 0 3px rgba(57, 169, 0, 0.15);
+}
+
+/* ==========================================
+BOTÓN DE LOGIN
+========================================== */
+
 .btn-login {
-    width: 100%;
-    padding: 10px;
-    background-color: #39A900;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+width: 100%;
+padding: 12px;
+margin-top: 5px;
+border: none;
+border-radius: 6px;
+background-color: #39A900;
+color: #ffffff;
+font-size: 16px;
+font-weight: 600;
+cursor: pointer;
+transition: background-color 0.3s, transform 0.2s;
 }
 
 .btn-login:hover {
-    background-color: #2e8600;
+background-color: #2e8600;
 }
+
+.btn-login:active {
+transform: scale(0.98);
+}
+
+/* ==========================================
+MENSAJE DE ERROR
+========================================== */
 
 .error-msg {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-    display: none;
+display: none;
+margin-top: 12px;
+padding: 10px;
+border-radius: 5px;
+background-color: #ffe5e5;
+color: #c00000;
+font-size: 14px;
 }
 
-/* --- Estilos para la Página Principal (principal.html) --- */
+/* ==========================================
+ENCABEZADO - principal.html
+========================================== */
 
 header {
-    background-color: #00324D;
-    color: white;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+width: 100%;
+padding: 15px 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #00324D;
+color: #ffffff;
 }
 
+header h1 {
+font-size: 24px;
+}
+
+/* ==========================================
+MENÚ DE NAVEGACIÓN
+========================================== */
+
 .nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+display: flex;
+align-items: center;
+gap: 20px;
+list-style: none;
 }
 
 .nav-menu li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
+color: #ffffff;
+text-decoration: none;
+font-weight: 600;
+transition: color 0.3s;
 }
 
 .nav-menu li a:hover {
-    color: #39A900;
+color: #39A900;
 }
 
+.nav-menu .cerrar-sesion {
+color: #ffcc00;
+}
+
+.nav-menu .cerrar-sesion:hover {
+color: #ffffff;
+}
+
+/* ==========================================
+CONTENIDO PRINCIPAL
+========================================== */
+
 .main-content {
-    flex: 1;
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 45px 20px;
 }
 
 .main-content h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #00324D;
+margin-bottom: 30px;
+text-align: center;
+color: #00324D;
+font-size: 28px;
 }
 
-/* Grilla de 4 tarjetas */
+/* ==========================================
+TARJETAS
+========================================== */
 
 .grid-tarjetas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
 }
 
 .tarjeta {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-    padding: 30px 20px;
+min-height: 190px;
+padding: 30px 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+```
+background-color: #ffffff;
+border-radius: 10px;
+
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+
+cursor: pointer;
+text-align: center;
+
+transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+```
+
 }
 
 .tarjeta:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+transform: translateY(-6px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.tarjeta:focus {
+outline: 3px solid rgba(57, 169, 0, 0.4);
 }
 
 .tarjeta h3 {
-    color: #00324D;
-    margin-bottom: 10px;
+margin-bottom: 12px;
+color: #00324D;
+font-size: 20px;
 }
 
 .tarjeta p {
-    color: #666;
-    font-size: 14px;
+color: #666;
+font-size: 14px;
+line-height: 1.5;
 }
 
-/* --- Footer --- */
+/* ==========================================
+SECCIÓN CONTACTO
+========================================== */
+
+.contacto {
+width: 100%;
+padding: 40px 20px;
+background-color: #e9efed;
+text-align: center;
+}
+
+.contacto h2 {
+margin-bottom: 10px;
+color: #00324D;
+}
+
+.contacto p {
+color: #555;
+line-height: 1.6;
+}
+
+/* ==========================================
+FOOTER
+========================================== */
 
 footer {
-    background-color: #00324D;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    margin-top: auto;
+width: 100%;
+padding: 20px;
+background-color: #00324D;
+color: #ffffff;
+text-align: center;
+font-size: 14px;
+line-height: 1.8;
 }
 
-/* --- Estilos para la página de detalle (detalle.html) --- */
+footer p {
+margin: 3px 0;
+}
+
+/* ==========================================
+PÁGINA DE DETALLE - detalle.html
+========================================== */
 
 .detalle-container {
-    max-width: 800px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    flex: 1;
-    width: 100%;
+width: 100%;
+max-width: 800px;
+min-height: 300px;
+margin: 40px auto;
+padding: 35px;
+
+```
+background-color: #ffffff;
+border-radius: 10px;
+
+box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+```
+
 }
 
+.detalle-container h2 {
+margin-bottom: 20px;
+color: #00324D;
+}
+
+.detalle-container p {
+color: #555;
+font-size: 16px;
+line-height: 1.7;
+}
+
+/* ==========================================
+BOTÓN VOLVER
+========================================== */
+
 .btn-volver {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 8px 15px;
-    background-color: #00324D;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+display: inline-block;
+margin-top: 25px;
+padding: 10px 18px;
+
+```
+background-color: #00324D;
+color: #ffffff;
+
+border-radius: 6px;
+text-decoration: none;
+font-weight: 600;
+
+transition: background-color 0.3s;
+```
+
+}
+
+.btn-volver:hover {
+background-color: #39A900;
+}
+
+/* ==========================================
+RESPONSIVE - TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+
+```
+.grid-tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+header {
+    padding: 15px 20px;
+}
+```
+
+}
+
+/* ==========================================
+RESPONSIVE - CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+```
+header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 21px;
+}
+
+.nav-menu {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.grid-tarjetas {
+    grid-template-columns: 1fr;
+}
+
+.main-content {
+    padding: 30px 15px;
+}
+
+.main-content h2 {
+    font-size: 24px;
+}
+
+.login-box {
+    padding: 30px 20px;
+}
+
+.detalle-container {
+    margin: 20px 15px;
+    padding: 25px 20px;
+}
+```
+
 }
